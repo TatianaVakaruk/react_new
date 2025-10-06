@@ -5,11 +5,11 @@ import Greeting from './Greeting';
 const userData = {
   firstName: 'John',
   lastName: 'Doe',
-  date1: '1985-10-07',
+  birthDate: '1985-10-07',
 
   getYearDifference() {
     const now = new Date();
-    const pastDate = new Date(this.date1);
+    const pastDate = new Date(this.birthDate);
 
     let years = now.getFullYear() - pastDate.getFullYear();
 
