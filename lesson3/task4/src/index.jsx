@@ -5,19 +5,18 @@ import Greeting from './Greeting';
 const userData = {
   firstName: 'John',
   lastName: 'Doe',
-  birthDate: '1985-10-07',
+  birthDate: new Date('1985-10-07'),
 
   getYearDifference() {
     const now = new Date();
-    const pastDate = new Date(this.birthDate);
 
-    let years = now.getFullYear() - pastDate.getFullYear();
+    let years = now.getFullYear() - this.birthDate.getFullYear();
 
     // Учитываем месяц и день, чтобы результат был точным
     const hasNotHadBirthdayThisYear =
-      now.getMonth() < pastDate.getMonth() ||
-      (now.getMonth() === pastDate.getMonth() &&
-        now.getDate() < pastDate.getDate());
+      now.getMonth() < this.birthDate.getMonth() ||
+      (now.getMonth() === this.birthDate.getMonth() &&
+        now.getDate() < this.birthDate.getDate());
 
     if (hasNotHadBirthdayThisYear) {
       years--;
