@@ -7,9 +7,6 @@ class Clock extends Component {
     this.state = {
       location: this.props.location,
       offset: this.props.offset,
-      strHours: '',
-      strMinutes: '',
-      strSeconds: '',
       time: '',
     };
   }
@@ -34,25 +31,23 @@ class Clock extends Component {
     hours = hours ? hours : 12; // 0 превращается в 12
 
     // Форматируем с добавлением ведущих нулей
-    this.props.strHours = hours.toString();
-    this.props.strMinutes = minutes.toString().padStart(2, '0');
-    this.props.strSeconds = seconds.toString().padStart(2, '0');
+    let strHours = hours.toString();
+    let strMinutes = minutes.toString().padStart(2, '0');
+    let strSeconds = seconds.toString().padStart(2, '0');
 
     // Собираем финальную строку
     return setInterval(() => {
-      if (this.props.strSeconds === 60) {
-        this.props.strSeconds = 0;
-        this.props.strMinutes += 1;
+      if (strSeconds === 60) {
+        strSeconds = 0;
+        strMinutes += 1;
       }
-      if (this.props.strMinutes === 60) {
-        this.props.strMinutes = 0;
-        this.props.strHours += 1;
+      if (strMinutes === 60) {
+        strMinutes = 0;
+        strHours += 1;
       }
 
       this.setState({
-        time: `${this.props.strHours}:${
-          this.props.strMinutes
-        }:${(this.props.strSeconds += 1)} ${ampm}`,
+        time: `${strHours}:${strMinutes}:${strSeconds + 1} ${ampm}`,
       });
     }, 1000);
   }
