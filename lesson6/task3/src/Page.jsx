@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Message from './Message.jsx';
+import Info from './Info.jsx';
 
 const info1 = 'Price is 500$. Available in 2 colors';
 const info2 = 'Price is 650$. Not available';
@@ -16,7 +16,7 @@ class Page extends Component {
   render() {
     return (
       <div className="page">
-        <Message text={this.state.text} />
+        <Info text={this.state.text} />
         <div className="actions">
           <button className="btn" onClick={() => this.setText(info1)}>
             IPhone 13
