@@ -12,7 +12,7 @@ class Life extends Component {
     console.log(
       'shouldComponentUpdate(nextProps, nextState): decide to render or not to render'
     );
-    return nextProps.number % 2;
+    return true;
   }
   componentWillUnmount() {
     console.log(
@@ -24,6 +24,7 @@ class Life extends Component {
       'componentDidUpdate(prevProps, prevState): some updates based on new props'
     );
   }
+
   render() {
     console.log('return React element to build DOM');
     return <div>{this.props.number}</div>;
