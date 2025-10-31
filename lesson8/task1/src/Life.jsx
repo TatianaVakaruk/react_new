@@ -6,7 +6,7 @@ class Life extends Component {
     console.log('constructor: good place to create state');
   }
   componentDidMount() {
-    console.log('componentDidMount: Api calls, subscriptions');
+    console.log('componentDidMount: API calls, subscriptions');
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log(
@@ -14,12 +14,12 @@ class Life extends Component {
     );
     return nextProps.number % 2;
   }
-  componentWillUnmount(prevProps, prevState) {
+  componentWillUnmount() {
     console.log(
       'componentWillUnmount():cleanup before Dom related to component will be removed'
     );
   }
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     console.log(
       'componentDidUpdate(prevProps, prevState): some updates based on new props'
     );
