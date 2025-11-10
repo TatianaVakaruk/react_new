@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ShoppingCard from './ShoppingCard';
+import ShoppingCart from './ShoppingCart.jsx';
 import Profile from './Profile.jsx';
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
           {`Hello, ${userData.firstName} ${userData.lastName}`}
         </h1>
         <main className="content">
-          <ShoppingCard userData={userData} />
+          <ShoppingCart userData={userData} />
           <Profile userData={userData} handleChange={this.handleChange} />
         </main>
       </div>
