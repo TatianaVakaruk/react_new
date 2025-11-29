@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App.jsx';
+import Counter from './Counter.jsx';
 
 const rootElement = document.querySelector('#root');
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Counter />, rootElement);

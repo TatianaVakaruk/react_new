@@ -8,8 +8,7 @@ const Counter = () => {
         -
       </button>
       <span class="counter__value" onClick={() => setCounter(0)}>
-        {' '}
-        {counter}{' '}
+        {counter}
       </span>
       <button class="counter__button" onClick={() => setCounter(counter + 1)}>
         +
